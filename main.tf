@@ -23,7 +23,7 @@ resource "aws_vpc" "main" {
 } 
 module "security-groups" {
   source  = "app.terraform.io/029DA-DevOps24/security-groups/aws"
-  version = "1.0.0"
+  version = "2.0.0"
   vpc_id = aws_vpc.main.id# insert required variables here
   ingress = [
     {
