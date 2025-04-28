@@ -23,9 +23,9 @@ resource "aws_vpc" "main" {
 } 
 module "security-groups" {
   source  = "app.terraform.io/029DA-DevOps24/security-groups/aws"
-  version = "2.0.0"
+  version = "1.0.0"
   vpc_id = aws_vpc.main.id# insert required variables here
-  dynamic "ingress" = [
+  ingress = [
     {
       from_port   = 80
       to_port     = 80
@@ -33,11 +33,11 @@ module "security-groups" {
       cidr_blocks  = ["0.0.0.0/0"]
       description = "HTTP"
     },
-    {
-      from_port   = 443
-      to_port     = 443
-      protocol    = "tcp"
-      cidr_blocks  = ["10.0.0.0/16"]
-      description = "HTTPS"
-  ]
+  #  {
+   #   from_port   = 443
+    #  to_port     = 443
+     # protocol    = "tcp"
+      #cidr_blocks  = ["10.0.0.0/16"]
+      #description = "HTTPS"
+  #]
 }
