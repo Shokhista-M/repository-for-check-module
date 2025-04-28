@@ -39,5 +39,5 @@ module "security-groups" {
      # protocol    = "tcp"
       #cidr_blocks  = ["10.0.0.0/16"]
       #description = "HTTPS"
-  #]
+  ]
 }
